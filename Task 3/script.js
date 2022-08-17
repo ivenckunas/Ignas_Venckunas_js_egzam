@@ -18,19 +18,19 @@ const message = document.getElementById('message');
 
 
 showUsersBtn.addEventListener("click", async () => {
-    const cardsArr = await getCardData(ENDPOINT);
-    createOneUserCards(cardsArr)
+    const cardsArr = await getCardsData(ENDPOINT);
+    createUserCards(cardsArr)
     message.style.display = "none"
 })
 
 
-async function getCardData() {
+async function getCardsData() {
     const resp = await fetch(ENDPOINT);
     const data = await resp.json();
     return data
 }
 
-function createOneUserCards(arr) {
+function createUserCards(arr) {
     arr.forEach(element => {
         const userDiv = document.createElement('div');
         userDiv.className = "oneCard"
