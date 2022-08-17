@@ -39,3 +39,4 @@ function createUserCards(arr) {
         outputContainer.append(userDiv)
     });
 }
+
