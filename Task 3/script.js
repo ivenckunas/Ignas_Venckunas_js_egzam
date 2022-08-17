@@ -12,3 +12,30 @@ turėti bent minimalų stilių ir būti responsive;
 -------------------------------------------------------------------------- */
 
 const ENDPOINT = 'https://api.github.com/users';
+const showUsersBtn = document.getElementById('btn');
+const outputContainer = document.getElementById('output');
+const message = document.getElementById('message');
+
+
+showUsersBtn.addEventListener("click", async () => {
+    const cardsArr = await getCardData(ENDPOINT);
+    createOneUserCards(cardsArr)
+    message.style.display = "none"
+})
+
+
+async function getCardData() {
+    const resp = await fetch(ENDPOINT);
+    const data = await resp.json();
+    return data
+}
+
+function createOneUserCards(arr) {
+    arr.forEach(element => {
+        const userDiv = document.createElement('div');
+        userDiv.className = "oneCard"
+        userDiv.innerHTML = `<img src="${element.avatar_url}" alt="${element.login} image">
+        <p>${element.login}</p>`
+        outputContainer.append(userDiv)
+    });
+}
