@@ -15,7 +15,6 @@ const outputContainer = document.getElementById('output');
 window.addEventListener('load', async () => {
     const carsArr = await getCarsData(ENDPOINT);
     createBrandCard(carsArr)
-    console.log('carsArr ===', carsArr);
 });
 
 
@@ -34,3 +33,4 @@ function createBrandCard(arr) {
         outputContainer.append(userDiv)
     });
 }
+
