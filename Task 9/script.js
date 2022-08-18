@@ -17,9 +17,9 @@ class Movie {
         this.budget = budget;
     }
     wasExpensive() {
-        const bud = this.budget > 100000000 ? true : false
-        console.log('Budget is more than 100 millions ===', bud);
-        return bud
+        const budgetCheck = this.budget > 100000000 ? true : false
+        console.log('Budget is more than 100 millions ===', budgetCheck);
+        return budgetCheck
     }
 }
 
