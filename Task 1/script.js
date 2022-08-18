@@ -25,13 +25,12 @@ formEl.addEventListener("submit", (e) => {
 function createConvertedList(inputValue) {
     outputEl.textContent = ""
     outputEl.insertAdjacentHTML("afterbegin", `
-    <div class="results">
+    <div class="results card">
     <h2> Results: </h2>
     <p><span>${inputValue}</span>kg pavertus i svarus(lb) gausime <span>${(inputValue * 2.2046).toFixed(2)}</span>lb</p>
     <p><span>${inputValue}</span>kg pavertus i gramus(g) - <span>${(inputValue / 0.0010000).toFixed(2)}</span>g</p>
     <p><span>${inputValue}</span>kg pavertus i uncijas(oz) - <span>${(inputValue * 35.274).toFixed(2)}</span>oz</p>
     </div>
 ` )
-
 }
 
