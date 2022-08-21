@@ -9,29 +9,22 @@ division(a, b) - priima du skaičius ir grąžina jų dalybos rezultatą;
 
 function Calculator(a, b) {
     this.sum = function () {
-        const sum = a + b
-        console.log('sum ===', sum);
+        return a + b
     }
 
     this.sub = function () {
-        const sub = a - b
-        console.log('sub ===', sub);
+        return a - b
     }
 
     this.mult = function () {
-        const mult = a * b
-        console.log('mult ===', mult);
+        return a * b
     }
 
     this.div = function () {
-        const div = a / b
-        console.log('div ===', div);
+        return a / b
     }
 }
 
 
 const num = new Calculator(8, 5)
-num.sum()
-num.sub()
-num.mult()
-num.div()
+

@@ -13,7 +13,7 @@ const audi = {
 
 function showObjectKeys(obj) {
   const result = Object.keys(obj)
-  console.log('Objekto "keys" masyve ===', result);
+  return result
 }
 
-showObjectKeys(audi)
+console.log('Objekto "keys" masyve ===', showObjectKeys(audi));

@@ -18,11 +18,8 @@ class Movie {
     }
     wasExpensive() {
         const budgetCheck = this.budget > 100000000 ? true : false
-        console.log('Budget is more than 100 millions ===', budgetCheck);
         return budgetCheck
     }
 }
 
 const starWars = new Movie("A New Hope", "George Lucas", 11000000)
-console.log('starWars ===', starWars);
-starWars.wasExpensive();
