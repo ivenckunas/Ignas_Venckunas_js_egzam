@@ -22,15 +22,16 @@ const users = [
 
 function getUserAverageAge(arr) {
   const averageAgeOfUsers = arr.reduce((total, user) => total + user.age, 0) / arr.length
-  console.log('Visu Users amziaus vidurkis ===', + averageAgeOfUsers.toFixed(2));
+  return +averageAgeOfUsers.toFixed(2);
 }
 
-getUserAverageAge(users)
+console.log('Visu Users amziaus vidurkis ===', getUserAverageAge(users))
 
 function getUsersNames(arr) {
   const usersNamesArr = arr.map((users) => users.name)
-  console.log('Naujas Users vardu masyvas ===', usersNamesArr);
+  return usersNamesArr
+
 }
 
-getUsersNames(users)
+console.log('Naujas Users vardu masyvas ===', getUsersNames(users));
 

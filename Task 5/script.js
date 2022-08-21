@@ -22,14 +22,16 @@ const users = [
 
 function filterDogOwers(arr) {
   const dogOwners = arr.filter(user => user.hasDog === true)
-  console.log('Users, kurie turi augintini ===', dogOwners);
+  return dogOwners
 }
+
+console.log('Users, kurie turi augintini ===', filterDogOwers(users));
 
 filterDogOwers(users)
 
 function filterAdults(arr) {
   const adultsArr = arr.filter(user => user.age >= 18)
-  console.log('Users, kurie yra pilnameciai ===', adultsArr);
-}
+  return adultsArr
 
-filterAdults(users)
+}
+console.log('Users, kurie yra pilnameciai ===', filterAdults(users));
