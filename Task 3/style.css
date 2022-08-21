@@ -94,7 +94,7 @@
   }
 }
 
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 490px) {
   #output {
     grid-template-columns: repeat(2, 1fr);
   }

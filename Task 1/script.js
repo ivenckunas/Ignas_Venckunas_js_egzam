@@ -10,7 +10,6 @@ Pastaba: atvaizdavimas turi būti matomas pateikus formą ir pateikiamas
 ------------------------------------------------------------------- */
 
 'use strict';
-console.log('script.js');
 
 
 const formEl = document.forms[0]

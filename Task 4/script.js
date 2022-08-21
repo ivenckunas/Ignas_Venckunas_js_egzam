@@ -12,11 +12,12 @@ turėti bent minimalų stilių ir būti responsive;
 const ENDPOINT = 'cars.json';
 const outputContainer = document.getElementById('output');
 
-window.addEventListener('load', async () => {
+async function init() {
     const carsArr = await getCarsData(ENDPOINT);
     createBrandCard(carsArr)
-});
+};
 
+init()
 
 async function getCarsData() {
     const resp = await fetch(ENDPOINT);
@@ -25,12 +26,18 @@ async function getCarsData() {
 }
 
 function createBrandCard(arr) {
-    arr.forEach(element => {
+    arr.map(element => {
         const userDiv = document.createElement('div');
         userDiv.className = "oneCard card"
-        userDiv.innerHTML = `<p class="brand">${element.brand}</p> </br> <p class="models">
-        ${element.models}</p>`
+        userDiv.innerHTML = `<h3 class="brand">${element.brand}</h3>
+        <ul class="models
+        ">${createModelsList(element.models)}
+        </ul>`
         outputContainer.append(userDiv)
     });
 }
 
+function createModelsList(arr) {
+    const modelsList = arr.map((element) => `<li >${element}</li>`).join('')
+    return modelsList
+}
