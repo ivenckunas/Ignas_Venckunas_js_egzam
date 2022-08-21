@@ -1,10 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 /* Resets */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* Mobile first */
@@ -14,10 +15,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: rgb(17, 100, 102);
+  background: radial-gradient(circle, rgba(17, 100, 102, 0.819765406162465) 25%, rgba(44, 53, 49, 1) 97%);
 }
 
 .container {
-  width: 100%;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,5 +28,95 @@
 
 .container h1 {
   margin-top: 50px;
-  color: #333;
+  color: snow;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+}
+
+#output {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.oneCard {
+  flex-basis: 31%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 1rem;
+  text-align: center;
+  flex-grow: 1;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.oneCard:hover {
+  transform: translateY(-5px);
+  color: black;
+}
+
+.brand {
+  color: black;
+  font-size: 2rem;
+  padding-bottom: 2rem;
+  transition: 0.2s;
+}
+.oneCard:hover .brand {
+  font-size: 2.1rem;
+}
+
+.models {
+  padding-bottom: 4rem;
+  list-style: none;
+}
+
+.card {
+  color: #0e4b4d;
+  padding: 1rem;
+  box-shadow: 5px 5px 10px #2c3531;
+  border: 1px solid #d9b08c;
+  border-radius: 5px;
+  background-color: #ffcb9a;
+}
+
+@media screen and (max-width: 426px) {
+  .oneCard {
+    padding-top: 1rem;
+  }
+  .oneCard:hover .brand {
+    font-size: 1.2rem;
+  }
+
+  .brand {
+    font-size: 1rem;
+  }
+  .models {
+    font-size: 0.8rem;
+    padding-bottom: 1rem;
+  }
+  #output {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  #output {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #output {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+  }
 }

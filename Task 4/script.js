@@ -10,3 +10,34 @@ turėti bent minimalų stilių ir būti responsive;
 -------------------------------------------------------------------------- */
 
 const ENDPOINT = 'cars.json';
+const outputContainer = document.getElementById('output');
+
+async function init() {
+    const carsArr = await getCarsData(ENDPOINT);
+    createBrandCard(carsArr)
+};
+
+init()
+
+async function getCarsData() {
+    const resp = await fetch(ENDPOINT);
+    const data = await resp.json();
+    return data
+}
+
+function createBrandCard(arr) {
+    arr.map(element => {
+        const userDiv = document.createElement('div');
+        userDiv.className = "oneCard card"
+        userDiv.innerHTML = `<h3 class="brand">${element.brand}</h3>
+        <ul class="models
+        ">${createModelsList(element.models)}
+        </ul>`
+        outputContainer.append(userDiv)
+    });
+}
+
+function createModelsList(arr) {
+    const modelsList = arr.map((element) => `<li >${element}</li>`).join('')
+    return modelsList
+}
